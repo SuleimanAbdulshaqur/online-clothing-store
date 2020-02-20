@@ -19,14 +19,13 @@ class App extends React.Component {
     }
   }
   //this closes and logs out when app unmounts
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
     // a method to know when someone is logged in
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-
 
         userRef.onSnapshot(snapShot => {
           this.setState({
@@ -35,7 +34,7 @@ class App extends React.Component {
               ...snapShot.data()
             }
           })
-        })
+        });
       } else{
         this.setState({
           currentUser: userAuth
