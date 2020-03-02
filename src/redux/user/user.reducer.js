@@ -1,4 +1,4 @@
-import {userActionTypes, UserActionTypes} from './user.types';
+import {UserActionTypes} from './user.types';
 
 // reducer is a function that gets two properties
 // 1. prev state 2. action(an object that has 2 props: type & payload)
